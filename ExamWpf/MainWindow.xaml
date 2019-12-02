@@ -1,0 +1,41 @@
+﻿<Window x:Class="ExamWpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExamWpf"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FF5C82C5" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="185*"/>
+            <RowDefinition Height="32*"/>
+        </Grid.RowDefinitions>
+        <TextBox Name="textBox_PageNumber" HorizontalAlignment="Left" Margin="10,32,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="203" Height="22"/>
+        <Label Content="Введите номер страницы" HorizontalAlignment="Left" Margin="10,1,0,0" Grid.Row="1" VerticalAlignment="Top" Width="203" Background="#FF5C82C5" FontFamily="Century Gothic" FontSize="14"/>
+        <Button Content="Загрузить" HorizontalAlignment="Left" Margin="580,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="173" Height="45" Click="Download_Click" Style="{DynamicResource ButtonSkin}"/>
+
+        <ListView Margin="10" Name="lvItems" Grid.Row="0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Имя" Width="100" DisplayMemberBinding="{Binding name}" />
+                    <GridViewColumn Header="Рост" Width="80" DisplayMemberBinding="{Binding height}" />
+                    <GridViewColumn Header="Масса" Width="80" DisplayMemberBinding="{Binding mass}" />
+                    <GridViewColumn Header="Цвет волос" Width="80" DisplayMemberBinding="{Binding hair_color}" />
+                    <GridViewColumn Header="Цвет кожи" Width="80" DisplayMemberBinding="{Binding skin_color}" />
+                    <GridViewColumn Header="Цвет глаз" Width="80" DisplayMemberBinding="{Binding eye_color}" />
+                    <GridViewColumn Header="Год рождения" Width="80" DisplayMemberBinding="{Binding birth_year}" />
+                    <GridViewColumn Header="Пол" Width="80" DisplayMemberBinding="{Binding gender}" />
+                    <GridViewColumn Header="Мир" Width="80" DisplayMemberBinding="{Binding homeworld}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Image Source="imgs/111.jpg" Opacity="0.4" Stretch="Fill"/>
+    </Grid>
+</Window>

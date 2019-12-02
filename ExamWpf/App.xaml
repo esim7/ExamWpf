@@ -1,0 +1,39 @@
+﻿<Application x:Class="ExamWpf.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ExamWpf"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Style TargetType="Button" x:Key="ButtonSkin">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" >
+                        <GradientStop Color="#FF053755" Offset="0.5" />
+                        <GradientStop Color="#FF061F31" Offset="0.5" />
+                        <GradientStop Color="#FF348FD0" Offset="0.5" />
+                        <GradientStop Color="#061F31" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Margin="-1,0" Grid.Column="1" Background="{TemplateBinding Background}"  BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0,1">
+                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" Content="{TemplateBinding Content}"/>
+                            </Border>
+                            <Path Fill="{TemplateBinding Background}" Data="M13,0 0,25 0,27 13,52 13,52" Stroke="{TemplateBinding BorderBrush}" Width="13" Stretch="Fill" ClipToBounds="True"/>
+                            <Path Grid.Column="2" Data="M0,0 13,25 13,27 0,52" Stroke="{TemplateBinding BorderBrush}" Fill="{TemplateBinding Background}" Width="13" Stretch="Fill" ClipToBounds="True"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Application.Resources>
+</Application>
